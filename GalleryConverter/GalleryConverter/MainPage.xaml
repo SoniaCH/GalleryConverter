@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:GalleryConverter;assembly=GalleryConverter"
+             xmlns:local="clr-namespace:GalleryConverter"
+             x:Class="GalleryConverter.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:SizeConverter x:Key="SizeConverter"/>
+            <converters:CheckConverter x:Key="CheckConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout VerticalOptions="Center">
+
+        <StackLayout Orientation="Horizontal" Padding="20">
+            <Image Source="checkedimg.png" HeightRequest="20" WidthRequest="20">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding TabTappedCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+            <Image Source="{Binding Img}" HeightRequest="60" WidthRequest="60"/>
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Image Source="{Binding IsCheckedDog,Converter={StaticResource CheckConverter}}" HeightRequest="20" WidthRequest="20">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OnCheck}" CommandParameter="1"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="dog" TextColor="Black"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Image Source="{Binding IsCheckedCat,Converter={StaticResource CheckConverter}}" HeightRequest="20" WidthRequest="20">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OnCheck}" CommandParameter="2"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="cat" TextColor="Black"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Image Source="{Binding IsCheckedPanda,Converter={StaticResource CheckConverter}}" HeightRequest="20" WidthRequest="20">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OnCheck}" CommandParameter="3"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="panda" TextColor="Black"/>
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal">
+            <Image Source="{Binding IsCheckedTiger,Converter={StaticResource CheckConverter}}" HeightRequest="20" WidthRequest="20">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OnCheck}" CommandParameter="4"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="tiger" TextColor="Black"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
