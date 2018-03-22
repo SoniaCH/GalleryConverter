@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GalleryConverter.iOS", "Gal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GalleryConverter.UWP", "GalleryConverter\GalleryConverter.UWP\GalleryConverter.UWP.csproj", "{0E432384-4B35-4976-8C7B-4D9115B977C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GalleryConverter", "GalleryConverter\GalleryConverter\GalleryConverter.csproj", "{90A9AA14-E993-4386-BA4A-5B4446D7F28E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GalleryConverter", "GalleryConverter\GalleryConverter\GalleryConverter.csproj", "{90A9AA14-E993-4386-BA4A-5B4446D7F28E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

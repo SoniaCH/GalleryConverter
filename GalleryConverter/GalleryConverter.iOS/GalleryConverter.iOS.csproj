@@ -144,4 +144,61 @@
   <ItemGroup>
     <BundleResource Include="Resources\left.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\backtoright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cat.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\catone.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\catthree.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cattwo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\checkedimg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dog.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dogfour.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dogone.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dogthree.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dogtwo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monkey.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\panda.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pandatwo.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pandone.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tiger.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tigerone.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tigerthree.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\uncheckedimg.png" />
+  </ItemGroup>
 </Project>

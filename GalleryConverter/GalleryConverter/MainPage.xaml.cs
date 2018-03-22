@@ -81,6 +81,10 @@ namespace GalleryConverter
             _item.Add(new Animal() { Id = "9", Img = "dogtwo.jpg", Categorie = "Dogs" });
             _item.Add(new Animal() { Id = "10", Img = "panda.jfif", Categorie = "Pandas" });
             _item.Add(new Animal() { Id = "11", Img = "tiger.jpg", Categorie = "Tigers" });
+            _item.Add(new Animal() { Id = "12", Img = "tigerone.jpg", Categorie = "Tigers" });
+            _item.Add(new Animal() { Id = "13", Img = "tigerthree.jfif", Categorie = "Tigers" });
+            _item.Add(new Animal() { Id = "10", Img = "pandone.jpg", Categorie = "Pandas" });
+            _item.Add(new Animal() { Id = "10", Img = "pandatwo.jfif", Categorie = "Pandas" });
 
 
             return _item;
@@ -111,202 +115,165 @@ namespace GalleryConverter
             AnimalImg.Source = "cat.jfif";
             nbrAnimal = AnimalList.Count();
 
-        }  
+        }
 
         #region Passing from image to image: Gallery
 
-        public ICommand TabTappedCommand
+        public void GalleryPass(object sender, EventArgs args)
         {
-            get
+            if (nbrSelectedAnimals > 0)
             {
-                return new Command((e) =>
+                AnimalImg.Source = _selectedAnimals[nbrSelectedAnimals - 1].Img;
+                nbrSelectedAnimals = nbrSelectedAnimals - 1;
+                nbrAnimal = AnimalList.Count();
+                if (nbrSelectedAnimals == 0)
                 {
-                   
-                    if (nbrSelectedAnimals>0)
-                    {                                                                   
-                        AnimalImg.Source = _selectedAnimals[nbrSelectedAnimals - 1].Img;
-                        nbrSelectedAnimals = nbrSelectedAnimals - 1;
-                        nbrAnimal = AnimalList.Count();
-                        if (nbrSelectedAnimals == 0)
-                        {
-                            nbrSelectedAnimals = _selectedAnimals.Count();
-                            AnimalImg.Source = _selectedAnimals[nbrSelectedAnimals - 1].Img;
-                        }
+                    nbrSelectedAnimals = _selectedAnimals.Count();
+                    AnimalImg.Source = _selectedAnimals[nbrSelectedAnimals - 1].Img;
+                }
 
-                    }
-                    if (IsCheckedTiger == false && IsCheckedDog == false && IsCheckedPanda == false && IsCheckedCat == false && nbrAnimal > 0)
-                    {
-                        AnimalImg.Source = AnimalList[nbrAnimal - 1].Img;
-                        nbrAnimal = nbrAnimal - 1;
-                        nbrDogs = _dogs.Count();
-                        nbrCats = _cats.Count();
-                        nbrPandas = _pandas.Count();
-                        if (nbrAnimal == 0)
-                        {
-                            nbrAnimal = AnimalList.Count();
-                            AnimalImg.Source = AnimalList[nbrAnimal - 1].Img;
-                        }
-                    }
-                });
             }
-
+            if (IsCheckedTiger == false && IsCheckedDog == false && IsCheckedPanda == false && IsCheckedCat == false && nbrAnimal > 0)
+            {
+                AnimalImg.Source = AnimalList[nbrAnimal - 1].Img;
+                nbrAnimal = nbrAnimal - 1;
+                nbrDogs = _dogs.Count();
+                nbrCats = _cats.Count();
+                nbrPandas = _pandas.Count();
+                if (nbrAnimal == 0)
+                {
+                    nbrAnimal = AnimalList.Count();
+                    AnimalImg.Source = AnimalList[nbrAnimal - 1].Img;
+                }
+            }
         }
         #endregion
 
         #region Check and uncheck the chekbox
-        public ICommand OnCheckDog
+   
+        public void OnCheckDog(object sender, EventArgs args)
         {
-            get
+            if (IsCheckedDog == true)
             {
-                return new Command((e) =>
+                foreach (Animal animal in AnimalList)
                 {
-                    if (IsCheckedDog == true)
+                    if (animal.Categorie == "Dogs")
                     {
-                        foreach (Animal animal in AnimalList)
-                        {
-                            if (animal.Categorie == "Dogs")
-                            {
-                                _selectedAnimals.Remove(animal);
-                                //AnimalImg.Source = animal.Img;
-                            }
-                        }
-                        AnimalImg.Source = _selectedAnimals[0].Img;
-                        IsCheckedDog = false;
-                        nbrSelectedAnimals = _selectedAnimals.Count();
+                        _selectedAnimals.Remove(animal);
                     }
-                    else {
-                        IsCheckedDog = true;
-                        AnimalImg.Source = "dog.jfif";
-                        foreach (Animal animal in AnimalList)
-                        {
-                            if (animal.Categorie == "Dogs")
-                            {
-                                _selectedAnimals.Add(animal);
-                               
-                            }
-                        }
-                        nbrSelectedAnimals = _selectedAnimals.Count();
+                }
+                AnimalImg.Source = _selectedAnimals[0].Img;
+                IsCheckedDog = false;
+                nbrSelectedAnimals = _selectedAnimals.Count();
+            }
+            else
+            {
+                IsCheckedDog = true;
+                AnimalImg.Source = "dog.jfif";
+                foreach (Animal animal in AnimalList)
+                {
+                    if (animal.Categorie == "Dogs")
+                    {
+                        _selectedAnimals.Add(animal);
+
                     }
-                    
-                });
+                }
+                nbrSelectedAnimals = _selectedAnimals.Count();
             }
         }
 
-        public ICommand OnCheckCat
-        {
-            get
+        public void OnCheckCat(object sender, EventArgs args) {
+            if (IsCheckedCat == true)
             {
-                return new Command((e) =>
+                foreach (Animal animal in AnimalList)
                 {
-                    if (IsCheckedCat == true)
+                    if (animal.Categorie == "Cats")
                     {
-                        foreach (Animal animal in AnimalList)
-                        {
-                            if (animal.Categorie == "Cats")
-                            {
-                                _selectedAnimals.Remove(animal);
-                               
-                            }
-                        }
-                        IsCheckedCat = false;
-                        nbrSelectedAnimals = _selectedAnimals.Count();
-                        AnimalImg.Source = _selectedAnimals[0].Img;
+                        _selectedAnimals.Remove(animal);
+
                     }
-                    else
+                }
+                IsCheckedCat = false;
+                nbrSelectedAnimals = _selectedAnimals.Count();
+                AnimalImg.Source = _selectedAnimals[0].Img;
+            }
+            else
+            {
+                IsCheckedCat = true;
+                AnimalImg.Source = "cat.jfif";
+                foreach (Animal animal in AnimalList)
+                {
+                    if (animal.Categorie == "Cats")
                     {
-                        IsCheckedCat= true;
-                        AnimalImg.Source = "cat.jfif";
-                        foreach (Animal animal in AnimalList)
-                        {
-                            if (animal.Categorie == "Cats")
-                            {
-                                _selectedAnimals.Add(animal);
+                        _selectedAnimals.Add(animal);
 
-                            }
-                        }
-                        nbrSelectedAnimals = _selectedAnimals.Count();
                     }
-
-                });
+                }
+                nbrSelectedAnimals = _selectedAnimals.Count();
             }
         }
 
-        public ICommand OnCheckTiger
+        public void OnCheckTiger(object sender, EventArgs args)
         {
-            get
+            if (IsCheckedTiger == true)
             {
-                return new Command((e) =>
+                foreach (Animal animal in AnimalList)
                 {
-                    if (IsCheckedTiger == true)
+                    if (animal.Categorie == "Tigers")
                     {
-                        foreach (Animal animal in AnimalList)
-                        {
-                            if (animal.Categorie == "Tigers")
-                            {
-                                _selectedAnimals.Remove(animal);
+                        _selectedAnimals.Remove(animal);
 
-                            }
-                        }
-                        IsCheckedTiger = false;
-                        AnimalImg.Source = _selectedAnimals[0].Img;
-                        nbrSelectedAnimals = _selectedAnimals.Count();
                     }
-                    else
+                }
+                IsCheckedTiger = false;
+                AnimalImg.Source = _selectedAnimals[0].Img;
+                nbrSelectedAnimals = _selectedAnimals.Count();
+            }
+            else
+            {
+                IsCheckedTiger = true;
+                AnimalImg.Source = "tiger.jpg";
+                foreach (Animal animal in AnimalList)
+                {
+                    if (animal.Categorie == "Tigers")
                     {
-                        IsCheckedTiger = true;
-                        AnimalImg.Source = "tiger.jpg";
-                        foreach (Animal animal in AnimalList)
-                        {
-                            if (animal.Categorie == "Tigers")
-                            {
-                                _selectedAnimals.Add(animal);
+                        _selectedAnimals.Add(animal);
 
-                            }
-                        }
-                        nbrSelectedAnimals = _selectedAnimals.Count();
                     }
-
-                });
+                }
+                nbrSelectedAnimals = _selectedAnimals.Count();
             }
         }
 
-        public ICommand OnCheckPanda
-        {
-            get
+        public void OnCheckPanda(object sender, EventArgs args) {
+            if (IsCheckedPanda == true)
             {
-                return new Command((e) =>
+                foreach (Animal animal in AnimalList)
                 {
-                    if (IsCheckedPanda == true)
+                    if (animal.Categorie == "Pandas")
                     {
-                        foreach (Animal animal in AnimalList)
-                        {
-                            if (animal.Categorie == "Pandas")
-                            {
-                                _selectedAnimals.Remove(animal);
-
-                            }
-                        }
-                        IsCheckedPanda = false;
-                        AnimalImg.Source = _selectedAnimals[0].Img;
-                        nbrSelectedAnimals = _selectedAnimals.Count();
-                    }
-                    else
-                    {
-                        IsCheckedPanda = true;
-                        AnimalImg.Source = "panda.jfif";
-                        foreach (Animal animal in AnimalList)
-                        {
-                            if (animal.Categorie == "Pandas")
-                            {
-                                _selectedAnimals.Add(animal);
-
-                            }
-                        }
-                        nbrSelectedAnimals = _selectedAnimals.Count();
+                        _selectedAnimals.Remove(animal);
 
                     }
+                }
+                IsCheckedPanda = false;
+                AnimalImg.Source = _selectedAnimals[0].Img;
+                nbrSelectedAnimals = _selectedAnimals.Count();
+            }
+            else
+            {
+                IsCheckedPanda = true;
+                AnimalImg.Source = "panda.jfif";
+                foreach (Animal animal in AnimalList)
+                {
+                    if (animal.Categorie == "Pandas")
+                    {
+                        _selectedAnimals.Add(animal);
 
-                });
+                    }
+                }
+                nbrSelectedAnimals = _selectedAnimals.Count();
+
             }
         }
 

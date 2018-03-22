@@ -104,6 +104,23 @@
     <None Include="GalleryConverter.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="backtoright.png" />
+    <Content Include="cat.jfif" />
+    <Content Include="catone.jfif" />
+    <Content Include="catthree.jpg" />
+    <Content Include="cattwo.jpg" />
+    <Content Include="checkedimg.png" />
+    <Content Include="dog.jfif" />
+    <Content Include="dogfour.jpg" />
+    <Content Include="dogone.jfif" />
+    <Content Include="dogthree.jpg" />
+    <Content Include="dogtwo.jpg" />
+    <Content Include="icon.png" />
+    <Content Include="left.png" />
+    <Content Include="monkey.jpg" />
+    <Content Include="panda.jfif" />
+    <Content Include="pandatwo.jfif" />
+    <Content Include="pandone.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />
     <Content Include="Assets\LockScreenLogo.scale-125.png" />
@@ -136,6 +153,11 @@
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="right.png" />
+    <Content Include="tiger.jpg" />
+    <Content Include="tigerone.jpg" />
+    <Content Include="tigerthree.jfif" />
+    <Content Include="uncheckedimg.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -149,7 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.1"/>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GalleryConverter\GalleryConverter.csproj">

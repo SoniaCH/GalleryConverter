@@ -6,24 +6,23 @@
              x:Class="GalleryConverter.MainPage">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <converters:SizeConverter x:Key="SizeConverter"/>
             <converters:CheckConverter x:Key="CheckConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     <StackLayout VerticalOptions="Center">
 
-        <StackLayout Orientation="Horizontal" Padding="20" VerticalOptions="Center" HorizontalOptions="Center">
-            <Image Source="left.png" Rotation="180" HeightRequest="20" WidthRequest="20">
+        <StackLayout Orientation="Horizontal" Margin="20" VerticalOptions="Center" HorizontalOptions="Center">
+            <Image Source="left.png" Rotation="180" HeightRequest="40" WidthRequest="20">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding TabTappedCommand}" />
+                    <TapGestureRecognizer Tapped="GalleryPass" />
                     </Image.GestureRecognizers>
             </Image>
             
-            <Image x:Name="AnimalImg" HeightRequest="120" WidthRequest="120"/>
+            <Image x:Name="AnimalImg" HeightRequest="240" WidthRequest="240"/>
             
-            <Image Source="backtoright.png" HeightRequest="20" WidthRequest="20">
+            <Image Source="backtoright.png" HeightRequest="40" WidthRequest="20">
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding TabTappedCommand}" />
+                    <TapGestureRecognizer Tapped="GalleryPass" />
                 </Image.GestureRecognizers>
             </Image>
             
@@ -35,7 +34,7 @@
             <StackLayout Orientation="Horizontal" >
                 <Image Source="{Binding IsCheckedDog,Converter={StaticResource CheckConverter}}" HeightRequest="20" WidthRequest="20">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OnCheckDog}"/>
+                        <TapGestureRecognizer Tapped="OnCheckDog"/>
                     </Image.GestureRecognizers>
                 </Image>
                 <Label Text="dog" TextColor="Black"/>
@@ -44,7 +43,7 @@
             <StackLayout Orientation="Horizontal">
                 <Image Source="{Binding IsCheckedCat,Converter={StaticResource CheckConverter}}" HeightRequest="20" WidthRequest="20">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OnCheckCat}"/>
+                        <TapGestureRecognizer Tapped="OnCheckCat"/>
                     </Image.GestureRecognizers>
                 </Image>
                 <Label Text="cat" TextColor="Black"/>
@@ -53,7 +52,7 @@
             <StackLayout Orientation="Horizontal">
                 <Image Source="{Binding IsCheckedPanda,Converter={StaticResource CheckConverter}}" HeightRequest="20" WidthRequest="20">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OnCheckPanda}"/>
+                        <TapGestureRecognizer Tapped="OnCheckPanda"/>
                     </Image.GestureRecognizers>
                 </Image>
                 <Label Text="panda" TextColor="Black"/>
@@ -62,7 +61,7 @@
             <StackLayout Orientation="Horizontal">
                 <Image Source="{Binding IsCheckedTiger,Converter={StaticResource CheckConverter}}" HeightRequest="20" WidthRequest="20">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OnCheckTiger}"/>
+                        <TapGestureRecognizer Tapped="OnCheckTiger"/>
                     </Image.GestureRecognizers>
                 </Image>
                 <Label Text="tiger" TextColor="Black"/>
