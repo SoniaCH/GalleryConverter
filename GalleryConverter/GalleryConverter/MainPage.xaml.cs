@@ -96,6 +96,7 @@ namespace GalleryConverter
         int nbrCats;
         int nbrTigers;
         int nbrPandas;
+        int nbrAnimal;
 
         public MainPage()
         {
@@ -103,6 +104,7 @@ namespace GalleryConverter
             AnimalList = LoadTheListOfItems();
             InitializeComponent();
             AnimalImg.Source = "cat.jfif";
+            nbrAnimal = AnimalList.Count();
            
             foreach (Animal animal in AnimalList)
             {
@@ -159,6 +161,7 @@ namespace GalleryConverter
                         nbrCats = _cats.Count();
                         nbrPandas = _pandas.Count();
                         nbrTigers = _tigers.Count();
+                        nbrAnimal = AnimalList.Count();
                         if (nbrDogs==0)
                         {
                             nbrDogs = _dogs.Count();
@@ -173,6 +176,7 @@ namespace GalleryConverter
                         nbrDogs = _dogs.Count();
                         nbrPandas = _pandas.Count();
                         nbrTigers = _tigers.Count();
+                        nbrAnimal = AnimalList.Count();
                         if (nbrCats == 0)
                         {
                             nbrCats = _cats.Count();
@@ -187,6 +191,7 @@ namespace GalleryConverter
                         nbrDogs = _dogs.Count();
                         nbrCats = _cats.Count();
                         nbrTigers = _tigers.Count();
+                        nbrAnimal = AnimalList.Count();
                         if (nbrPandas==0)
                         {
                             nbrPandas = _pandas.Count();
@@ -201,12 +206,27 @@ namespace GalleryConverter
                         nbrDogs = _dogs.Count();
                         nbrCats = _cats.Count();
                         nbrPandas = _pandas.Count();
+                        nbrAnimal = AnimalList.Count();
                         if (nbrTigers == 0)
                         {
                             nbrTigers = _tigers.Count();
                             AnimalImg.Source = _pandas[nbrTigers - 1].Img;
                         }
                     }
+                    if (IsCheckedTiger == false && IsCheckedDog == false && IsCheckedPanda == false && IsCheckedCat == false && nbrAnimal > 0)
+                    {
+                        AnimalImg.Source = AnimalList[nbrAnimal - 1].Img;
+                        nbrAnimal = nbrAnimal - 1;
+                        nbrDogs = _dogs.Count();
+                        nbrCats = _cats.Count();
+                        nbrPandas = _pandas.Count();
+                        if (nbrAnimal == 0)
+                        {
+                            nbrAnimal = AnimalList.Count();
+                            AnimalImg.Source = _pandas[nbrAnimal - 1].Img;
+                        }
+                    }
+
 
                 });
             }
