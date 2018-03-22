@@ -138,4 +138,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\imgchecked.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\left.png" />
+  </ItemGroup>
 </Project>
