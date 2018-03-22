@@ -35,7 +35,7 @@
             <StackLayout Orientation="Horizontal" >
                 <Image Source="{Binding IsCheckedDog,Converter={StaticResource CheckConverter}}" HeightRequest="20" WidthRequest="20">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OnCheck}" CommandParameter="1"/>
+                        <TapGestureRecognizer Command="{Binding OnCheckDog}"/>
                     </Image.GestureRecognizers>
                 </Image>
                 <Label Text="dog" TextColor="Black"/>
@@ -44,7 +44,7 @@
             <StackLayout Orientation="Horizontal">
                 <Image Source="{Binding IsCheckedCat,Converter={StaticResource CheckConverter}}" HeightRequest="20" WidthRequest="20">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OnCheck}" CommandParameter="2"/>
+                        <TapGestureRecognizer Command="{Binding OnCheckCat}"/>
                     </Image.GestureRecognizers>
                 </Image>
                 <Label Text="cat" TextColor="Black"/>
@@ -53,7 +53,7 @@
             <StackLayout Orientation="Horizontal">
                 <Image Source="{Binding IsCheckedPanda,Converter={StaticResource CheckConverter}}" HeightRequest="20" WidthRequest="20">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OnCheck}" CommandParameter="3"/>
+                        <TapGestureRecognizer Command="{Binding OnCheckPanda}"/>
                     </Image.GestureRecognizers>
                 </Image>
                 <Label Text="panda" TextColor="Black"/>
@@ -62,7 +62,7 @@
             <StackLayout Orientation="Horizontal">
                 <Image Source="{Binding IsCheckedTiger,Converter={StaticResource CheckConverter}}" HeightRequest="20" WidthRequest="20">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding OnCheck}" CommandParameter="4"/>
+                        <TapGestureRecognizer Command="{Binding OnCheckTiger}"/>
                     </Image.GestureRecognizers>
                 </Image>
                 <Label Text="tiger" TextColor="Black"/>
